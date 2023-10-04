@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Trail List</h1>
+
+{% for trail in trails %}
+  <div class="card">
+    <a href="{% url 'detail' trail.id %}">
+    <div class="card-content">
+      <span class="card-title">{{ trail.name }}</span>
+      <p>Location: {{ trail.location }}</p>
+      <p>Distance: {{ trail.distance }} miles</p>
+      <p>EST: {{ trail.est }} hrs</p>
+    </div>
+    </a>
+  </div
+  
+{% endfor %}
+
+{% endblock %}

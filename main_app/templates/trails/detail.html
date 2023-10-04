@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Trail Log</h1>
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ trail.name }}</span>
+    <p>Location: {{ trail.location }}</p>
+    <p>Distance: {{ trail.distance }} miles</p>
+    <p>EST: {{ trail.est }} hrs</p>
+  </div>
+  <div class="card-action">
+    <a href="{% url 'trails_update' trail.id %}">Edit</a>
+    <a href="{% url 'trails_delete' trail.id %}">Delete</a>
+  </div>
+</div>
+
+{% endblock %}
