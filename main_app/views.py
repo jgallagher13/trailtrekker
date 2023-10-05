@@ -35,7 +35,7 @@ def trails_detail(request, trail_id):
 
 class TrailCreate(LoginRequiredMixin, CreateView):
     model = Trail
-    fields = "__all__"
+    fields = ["name", "location", "distance", "est"]
     success_url = "/trails/"
 
     def form_valid(self, form):

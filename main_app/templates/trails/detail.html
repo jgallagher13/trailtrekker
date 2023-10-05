@@ -36,13 +36,14 @@
     </form>
     <table class="striped">
       <thead>
-        <tr><th>Date</th><th>Break</th></tr>
+        <tr><th>Date</th><th>Break</th><th>Time</th></tr>
       </thead>
       <tbody>
         {% for hiking in trail.hiking_set.all %}
           <tr>
             <td>{{hiking.date}}</td>
             <td>{{hiking.get_break_type_display}}</td>
+            <td>{{hiking.created}}</td>
           </tr>
         {% endfor %}
       </tbody>

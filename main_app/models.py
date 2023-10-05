@@ -30,6 +30,7 @@ class Trail(models.Model):
 class Hiking(models.Model):
     date = models.DateField("hiking date")
     break_type = models.CharField(max_length=1, choices=BREAKS, default=BREAKS[0][0])
+    created = models.TimeField(auto_now_add=True)
 
     trail = models.ForeignKey(Trail, on_delete=models.CASCADE)
 
@@ -37,7 +38,7 @@ class Hiking(models.Model):
         return f"{self.get_break_type_display()} on {self.date}"
 
     class Meta:
-        ordering = ["-date"]
+        ordering = ['-date', '-created']
 
 
 class Photo(models.Model):
