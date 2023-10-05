@@ -22,7 +22,7 @@ def trails_detail(request, trail_id):
 class TrailCreate(CreateView):
   model = Trail
   fields = '__all__'
-  success_url = '/trails/{trail_id}'
+  success_url = '/trails/'
 
 class TrailUpdate(UpdateView):
   model = Trail
