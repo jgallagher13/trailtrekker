@@ -10,4 +10,6 @@ urlpatterns = [
     path("trails/<int:pk>/update/", views.TrailUpdate.as_view(), name="trails_update"),
     path("trails/<int:pk>/delete/", views.TrailDelete.as_view(), name="trails_delete"),
     path("trails/<int:trail_id>/add_hiking/", views.add_hiking, name="add_hiking"),
+    path('trails/<int:trail_id>/add_photo/', views.add_photo, name='add_photo'),
+    path('accounts/signup/', views.signup, name='signup'),
 ]

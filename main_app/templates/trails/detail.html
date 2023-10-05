@@ -7,7 +7,6 @@
   <div class="col s6">
     <div class="card">
       <div class="card-content">
-        <span class="card-title">{{ trail.name }}</span>
         <p>Location: {{ trail.location }}</p>
         <p>Distance: {{ trail.distance }} miles</p>
         <p>EST: {{ trail.est }} hrs</p>
@@ -17,6 +16,17 @@
       <a href="{% url 'trails_delete' trail.id %}">Delete</a>
     </div>
   </div>
+  {% for photo in trail.photo_set.all %}
+      <img class="responsive-img card-panel" src="{{photo.url}}">
+    {% empty %}
+      <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+    {% endfor %}
+    <form action="{% url 'add_photo' trail.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+      {% csrf_token %}
+      <input type="file" name="photo-file">
+      <br><br>
+      <button type="submit" class="btn">Upload Photo</button>
+  </form>
 </div>
   <div class="col s6">
     <form action="{% url 'add_hiking' trail.id %}" method="POST">
