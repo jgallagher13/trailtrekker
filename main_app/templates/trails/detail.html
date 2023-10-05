@@ -3,17 +3,63 @@
 
 <h1>Trail Log</h1>
 
-<div class="card">
-  <div class="card-content">
-    <span class="card-title">{{ trail.name }}</span>
-    <p>Location: {{ trail.location }}</p>
-    <p>Distance: {{ trail.distance }} miles</p>
-    <p>EST: {{ trail.est }} hrs</p>
+<div class="row">
+  <div class="col s6">
+    <div class="card">
+      <div class="card-content">
+        <p>Location: {{ trail.location }}</p>
+        <p>Distance: {{ trail.distance }} miles</p>
+        <p>EST: {{ trail.est }} hrs</p>
+    </div>
+    <div class="card-action">
+      <a href="{% url 'trails_update' trail.id %}">Edit</a>
+      <a href="{% url 'trails_delete' trail.id %}">Delete</a>
+    </div>
   </div>
-  <div class="card-action">
-    <a href="{% url 'trails_update' trail.id %}">Edit</a>
-    <a href="{% url 'trails_delete' trail.id %}">Delete</a>
+  {% for photo in trail.photo_set.all %}
+      <img class="responsive-img card-panel" src="{{photo.url}}">
+    {% empty %}
+      <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+    {% endfor %}
+    <form action="{% url 'add_photo' trail.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
+      {% csrf_token %}
+      <input type="file" name="photo-file">
+      <br><br>
+      <button type="submit" class="btn">Upload Photo</button>
+  </form>
+</div>
+  <div class="col s6">
+    <form action="{% url 'add_hiking' trail.id %}" method="POST">
+      {% csrf_token %}
+      {{ hiking_form.as_p }}
+      <input type="submit" class="btn" value="Add Break">
+    </form>
+    <table class="striped">
+      <thead>
+        <tr><th>Date</th><th>Break</th></tr>
+      </thead>
+      <tbody>
+        {% for hiking in trail.hiking_set.all %}
+          <tr>
+            <td>{{hiking.date}}</td>
+            <td>{{hiking.get_break_type_display}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 </div>
+<script>
+  const dateEl = document.getElementById('id_date');
+  M.Datepicker.init(dateEl, {
+    format: 'yyyy-mm-dd',
+    defaultDate: new Date(),
+    setDefaultDate: true,
+    autoClose: true
+  });
+
+  const selectEl = document.getElementById('id_break_type');
+  M.FormSelect.init(selectEl);
+</script>
 
 {% endblock %}
