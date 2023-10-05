@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tz_detect',
 ]
 
 MIDDLEWARE = [
@@ -53,7 +54,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'tz_detect.middleware.TimezoneMiddleware',
 ]
+
+import django 
+if django.VERSION < (1, 10):
+    MIDDLEWARE_CLASSES += (
+        'tz_detect.middleware.TimezoneMiddleware',
+    )
 
 ROOT_URLCONF = 'trailtrekker.urls'
 
