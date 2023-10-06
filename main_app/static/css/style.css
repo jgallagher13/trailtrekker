@@ -16,3 +16,14 @@ body {
     padding-top: 0;
     text-align: right;
   }
+
+  .transparent-card {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form label, form input {
+  color: rgb(22, 21, 21);
+}
