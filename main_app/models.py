@@ -28,7 +28,7 @@ class Trail(models.Model):
 
 
 class Hiking(models.Model):
-    date = models.DateField("hiking date")
+    date = models.DateField("hike date")
     break_type = models.CharField(max_length=1, choices=BREAKS, default=BREAKS[0][0])
     created = models.TimeField(auto_now_add=True)
 
