@@ -1,8 +1,12 @@
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+  background-image: url('./image/bluehike.jpeg');
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
   
   main {
     flex: 1 0 auto;
