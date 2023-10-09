@@ -29,8 +29,9 @@
 - Trello
 
 ## Getting Started
-- [Link to Application]()
+- [Link to Application](https://trailtrekker-gfb2.onrender.com)
 - [Project Planning](https://trello.com/b/OttwtEVi/trailtrekker)
+- [Pitch Deck](https://docs.google.com/presentation/d/1VcvQ_TFt-frYQzj9jATjs8kFiLPz7fIrWArJXowF0AY/edit?usp=sharing)
 
 ## Next Steps
 - Add checkpoints on the hike
