@@ -1,5 +1,5 @@
 ## TrailTrekker
-- Embark on a journey of discovery with our hiking app! 'Explore, Track, Conquer: Your Adventures, Your Trail!' is your ultimate companion for logging every step of your hiking expeditions. Seamlessly track your routes, monitor your progress, and relive the thrill of conquering new trails. Wherever your path leads, let our app be your guide to a world of adventure. Lace up, explore nature, and leave no trail undocumented!
+- Embark on a journey of discovery with our hiking app! 'Explore, Track, Conquer: Your Adventures, Your Trail!' Trailtrekker is your ultimate companion for logging every step of your hiking expeditions. Seamlessly track your routes, monitor your progress, and relive the thrill of conquering new trails. Wherever your path leads, let our app be your guide to a world of adventure. Lace up, explore nature, and leave no trail undocumented!
 
 ## Images of Application
 - Sign Up Page
